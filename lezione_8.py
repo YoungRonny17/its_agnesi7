@@ -57,3 +57,20 @@ file_handler.setFormatter(formatter)
 logger.addHandler(file_handler) # aggiungo il file handler al logger
 
 logger.info("Applicazione avviata!")
+
+##################################################################
+
+from logging.handlers import RotatingFileHandler
+
+log.basicConfig() # Resetta il livello di Log impostato di default
+logger = log.getLogger('file_logger') # assegno un nome al Logger
+logger.setLevel(log.DEBUG) # Imposto il livello di severità del logger
+
+formatter = log.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s") #Formatto il log nel formato desiderato
+
+handler = RotatingFileHandler("app.log", maxBytes = 1024) # Imposto il file sul quale voglio salvare i log e la dimensione massima del file, quando viene superata viene creato un nuovo file di log
+handler.setFormatter(formatter) #Formatto il log nel formato desiderato
+
+logger.addHandler(handler) # aggiungo il file handler al logger
+
+logger.info("Applicazione avviata!")
