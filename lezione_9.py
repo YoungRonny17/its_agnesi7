@@ -83,3 +83,100 @@ print(pari)
 # Con utilizzo di if-else
 elementi = ["pari" if x % 2 == 0 else "dispari" for x in numeri]
 print(elementi)
+
+
+# Liste annidate e matrici
+# [[[], [], []], [[], [], []], [[], [], []]]
+
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(matrix[0][1]) # mi stampa il numero 2
+
+
+# for n in lista_range: print(n)
+# lista_range = range(0, 10, 2)
+# print(type(lista_range))
+# print(type(numeri))
+
+lista_range = [x for x in range(0, 10, 2)]
+print(lista_range)
+
+# Comprehension annidata
+matrix = [[val*y for val in range(5)] for y in range(5)]
+print(matrix)
+
+
+numeri = [1, 2, 3, 4, 5]
+
+# Set Comprehension
+# {espressione for elemento in iterabile if condition}
+numeri = [1, 2, 3, 4, 5]
+quadrati = [x ** 2 for x in numeri]
+
+# Set Comprehension
+# {espressione for elemento in iterabile if condition}
+numeri = [1, 2, 3, 2, 8]
+unici = {x for x in numeri}
+print(unici)
+
+# List Comprehension
+# [expression for item in iterable if condition]
+numeri = [1, 2, 3, 4, 5]
+quadrati = [x ** 2 for x in numeri]
+print(quadrati)
+
+# Set Comprehension
+# {expression for item in iterable if condition}
+numeri = [1, 2, 3, 2, 8]
+unici = {x for x in numeri}
+print(unici)
+
+# Dictionary Comprehension
+# {expression for item in iterable if condition}
+numeri = [1, 2, 3, 2, 8]
+diz = {x:x**2 for x in numeri}
+print(diz)
+
+
+dati = ["Mario", "antonio", "FRANCESCA"]
+dati_normalizzati = [nome.strip().capitalize() for nome in dati]
+print(dati_normalizzati)
+
+# Uso di Comprehension con Dizionari
+prezzi = {'a': 10, 'b': 20, 'c': 30}
+# prezzi.items()
+# prezzi.keys()
+# prezzi.values()
+scontati = {k:v*0.9 for k, v in prezzi.items()}
+print(prezzi)
+print(scontati)
+
+
+# Hai una lista di studenti rappresentati come dizionari:
+studenti = [
+    {"nome": "Luca", "voto": 28},
+    {"nome": "Anna", "voto": 17},
+    {"nome": "Marco", "voto": 30},
+    {"nome": "Giulia", "voto": 22},
+    {"nome": "Paolo", "voto": 18},
+    {"nome": "Sara", "voto": 15},
+    {"nome": "Mario", "voto": 22}
+]
+
+# List Comprehension
+# Crea una lista contenente solo i nomi degli studenti sufficienti (voto ≥ 18)
+# Crea una lista con i voti aumentati di 1 punto, ma solo per chi ha voto ≥ 18
+# Crea una lista di stringhe nel formato: "Nome - Promosso/Bocciato"
+
+# Set Comprehension
+# Crea un set con tutti i voti unici
+# Crea un set contenente solo i voti insufficienti
+
+# Dictionary Comprehension
+# Crea un dizionario: {nome: voto}
+# Crea un dizionario contenente solo gli studenti promossi
+# Crea un dizionario: {nome: "Eccellente" | "Buono" | "Sufficiente" | "Insufficiente"}
+# usando le seguenti regole:
+# ≥ 27 → Eccellente
+# ≥ 21 → Buono
+# ≥ 18 → Sufficiente
+# < 18 → Insufficiente
